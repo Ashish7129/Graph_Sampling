@@ -10,7 +10,7 @@ setuptools.setup(
     author_email="ashish.mcs16.du@gmail.com",
     description="A Sampling Package",
     long_description="A Sampling package containing various techniques which samples the original graph according to the sizes",
-    long_description_content_type="text/markdown",
+    long_description_content_type="text/Sampling_t",
     packages=setuptools.find_packages(),
     classifiers=(
         "Programming Language :: Python :: 3",
