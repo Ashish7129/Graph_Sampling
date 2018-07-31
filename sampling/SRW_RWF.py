@@ -18,6 +18,9 @@ class SRW_RWF():
         self.fly_back_prob = 0.15
 
     def random_walk_sampling_simple(self,complete_graph, nodes_to_sample):
+        complete_graph = nx.convert_node_labels_to_integers(complete_graph, 0, 'default', True)
+        for n, data in g.nodes(data=True):
+            complete_graph.node[n]['id']= n
         nr_nodes = len(complete_graph.nodes())
         upper_bound_nr_nodes_to_sample = nodes_to_sample
         index_of_first_random_node = random.randint(0, nr_nodes-1)
@@ -44,6 +47,9 @@ class SRW_RWF():
         return sampled_graph
 
     def random_walk_sampling_with_fly_back(self,complete_graph, nodes_to_sample, fly_back_prob):
+        complete_graph = nx.convert_node_labels_to_integers(complete_graph, 0, 'default', True)
+        for n, data in g.nodes(data=True):
+            complete_graph.node[n]['id']= n
         nr_nodes = len(complete_graph.nodes())
         upper_bound_nr_nodes_to_sample = nodes_to_sample
 
