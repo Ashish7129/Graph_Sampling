@@ -9,7 +9,7 @@ This is a simple sampling package. You can sample the original graph by using th
   - TIES : Total Induction Edge Sampling
   
 ### Pre-requisite
-sampling package requires [Python](https://www.python.org/downloads/) 2.7,3.4,3.5,3.6. If you don't have the pre-installed python. Please follow up the link.Our package also requires [Networkx](https://networkx.github.io/documentation/latest/install.html) 2.1 or newer.
+Sampling package requires [Python](https://www.python.org/downloads/) 2.7,3.4,3.5,3.6. If you don't have the pre-installed python in your system. Please follow up the link the python link to download it.Our package also requires [Networkx](https://networkx.github.io/documentation/latest/install.html) 2.1 or newer which helps to create the graphs and also manipulations on them.
 
 ### Installation
 Download the zip file and locate to the current folder and then run this command for installing the sampling package into your system
