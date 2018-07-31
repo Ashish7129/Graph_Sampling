@@ -22,7 +22,7 @@ After installing the package. You can use the package by writing the following c
 import sampling 
 ```
 ### test.py
-Check out the file test.py, helps to run the different functions with different type of arguments.
+Check out the file test.py, which helps to understand the procedure of executing the different functions with different type of arguments.As for example, we take snowball sampling,
 ```sh
 object = sampling.Snowball()             
 sampled_graph = object.snowball(G,size,k) 
