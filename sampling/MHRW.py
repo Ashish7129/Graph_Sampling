@@ -7,35 +7,41 @@ class MHRW():
     def __init__(self):
         self.G1 = nx.Graph()
 
-    def mhrw(self,G, size, node):
-        random_nodes = set()
-        dictt = set()
-        random_nodes.update(list(G.neighbors(node)))
-        #print(random_nodes)
-        deg_v = G.degree(node)
-        #print(deg_v)
-        z = node
-        dictt.add(z)
-        while(len(self.G1.nodes()) <= size):
-            z=node  
-            if(len(random_nodes)>0):
-                random_nodes.update(G.neighbors(z))
-                #print(random_nodes)
-                deg_p = G.degree(z)
-                w = random_nodes.pop()
-                if(w not in dictt):
-                    dictt.add(w)
-                    deg_c = G.degree(w)
-                    p = round(random.uniform(0,1),4)
-                    if(p <= min(1,deg_p/deg_c)):
-                        self.G1.add_edge(z,w)
-                        z = w
-                        random_nodes.clear()
+    def mhrw(self,G,node,size):
+        dictt = {}
+        node_list = set()
+        node_list.add(node)
+        parent_node = node_list.pop()
+        dictt[parent_node] = parent_node
+        degree_p = G.degree(parent_node)
+        related_list = list(G.neighbors(parent_node))
+        node_list.update(related_list)
+
+        while(len(self.G1.nodes()) < size):
+            if(len(node_list) > 0):
+                child_node = node_list.pop()
+                p =  round(random.uniform(0,1),4)
+                if(child_node not in dictt):
+                    related_listt = list(G.neighbors(child_node))
+                    degree_c = G.degree(child_node)
+                    dictt[child_node] = child_node
+                    if(p <= min(1,degree_p/degree_c) and child_node in list(G.neighbors(parent_node))):
+                        self.G1.add_edge(parent_node,child_node)
+                        parent_node = child_node
+                        degree_p = degree_c
+                        node_list.clear()
+                        node_list.update(related_listt)
                     else:
-                        dictt.remove(w)
+                        del dictt[child_node]
+
+
+            # node_list set becomes empty or size is not reached 
+            # insert some random nodes into the set for next processing
             else:
-                print len(self.G1.nodes())
-                node = random.sample(G.nodes(),1)
-                random_nodes.clear()
-                
+                node_list.update(random.sample(set(G.nodes())-set(self.G1.nodes()),3))
+                parent_node = node_list.pop()
+                G.add_node(parent_node)
+                related_list = list(G.neighbors(parent_node))
+                node_list.clear()
+                node_list.update(related_list)
         return self.G1
