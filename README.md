@@ -22,3 +22,7 @@ After installing the package. You can use the package by writing the following c
 import sampling 
 ```
 ### Different Functions
+
+```sh
+object = sampling()
+```
