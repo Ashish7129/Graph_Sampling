@@ -6,7 +6,7 @@ This is a simple sampling package. You can sample the original graph by using th
   - Snowball 
   - ForestFire
   - Metropolis Hastings Random Walk
-  - TIES
+  - TIES : Total Induction Edge Sampling
  
 ### Installation
 Download the zip file and locate to the current folder and then run this command for installing the sampling package into your system
@@ -21,8 +21,11 @@ After installing the package. You can use the package by writing the following c
 ```sh
 import sampling 
 ```
-### Different Functions
-
+### test.py
+Check out the file test.py, helps to run the different functions with different type of arguments.
 ```sh
-object = sampling()
+object = sampling.Snowball() [instance of the class] 
+sampled_graph = object.snowball(G,size,k) [Snowball class - snowball function]
+[G : Original Graph / Whole Graph, size: number of nodes you need to sampled, k: initial set of k nodes ]
+
 ```
