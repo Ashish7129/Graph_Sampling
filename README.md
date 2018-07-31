@@ -7,7 +7,9 @@ This is a simple sampling package. You can sample the original graph by using th
   - ForestFire
   - MHRW : Metropolis Hastings Random Walk
   - TIES : Total Induction Edge Sampling
- 
+### Pre-requisite
+sampling package python[python_d]2.7,3.4,3.5,3.6. If you don't have the pre-installed python. Please follow up the link.Our package also requires NetworkX[networkx] 2.1 or newer.
+
 ### Installation
 Download the zip file and locate to the current folder and then run this command for installing the sampling package into your system
 ```sh
@@ -29,3 +31,6 @@ sampled_graph = object.snowball(G,size,k)
 ```
 obejct is the instance of the class Snowball. Class having the snowball function which have 3 parameters as
 G : Original Graph / Whole Graph, size: number of nodes you need to sampled, k: initial set of k nodes
+
+    [python_d]  <https://www.python.org/downloads/>
+    [networkx] <https://networkx.github.io/documentation/latest/install.html>
