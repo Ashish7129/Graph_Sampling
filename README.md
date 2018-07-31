@@ -5,7 +5,7 @@ This is a simple sampling package. You can sample the original graph by using th
   - Random Walk Fly Back
   - Snowball 
   - ForestFire
-  - MHRW
+  - Metropolis Hastings Random Walk
   - TIES
  
 ### Installation
@@ -21,3 +21,4 @@ After installing the package. You can use the package by writing the following c
 ```sh
 import sampling 
 ```
+### Different Functions
