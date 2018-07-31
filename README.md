@@ -5,7 +5,7 @@ This is a simple sampling package. You can sample the original graph by using th
   - Random Walk Fly Back
   - Snowball 
   - ForestFire
-  - Metropolis Hastings Random Walk
+  - MHRW : Metropolis Hastings Random Walk
   - TIES : Total Induction Edge Sampling
  
 ### Installation
@@ -27,7 +27,5 @@ Check out the file test.py, helps to run the different functions with different 
 object = sampling.Snowball()             
 sampled_graph = object.snowball(G,size,k) 
 ```
-
- >instance of the class
- >Snowball class - snowball function
- >G : Original Graph / Whole Graph, size: number of nodes you need to sampled, k: initial set of k nodes
+obejct is the instance of the class Snowball. Class having the snowball function which have 3 parameters as
+G : Original Graph / Whole Graph, size: number of nodes you need to sampled, k: initial set of k nodes
