@@ -24,8 +24,10 @@ import sampling
 ### test.py
 Check out the file test.py, helps to run the different functions with different type of arguments.
 ```sh
-object = sampling.Snowball() [instance of the class] 
-sampled_graph = object.snowball(G,size,k) [Snowball class - snowball function]
-[G : Original Graph / Whole Graph, size: number of nodes you need to sampled, k: initial set of k nodes ]
-
+object = sampling.Snowball()             
+sampled_graph = object.snowball(G,size,k) 
 ```
+
+ >instance of the class
+ >Snowball class - snowball function
+ >G : Original Graph / Whole Graph, size: number of nodes you need to sampled, k: initial set of k nodes
