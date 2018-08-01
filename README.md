@@ -6,7 +6,7 @@ This is a simple sampling repo that helps you find a representative sample of th
 Sampling large graphs can be done by the following exploration techniques:
   - #### Simple Random Walk Sampling (SRW) : 
     Uniformly at random pick a starting node and then simulate a random walk on the graph.
-    * Function: random_walk_sampling_simple(complete_graph, nodes_to_sample)
+    ```sh Function: random_walk_sampling_simple(complete_graph, nodes_to_sample)```
   - #### Random Walk Sampling with Fly Back Probability (RWF) : 
     Uniformly at random pick a starting node and then simulate a random walk on the graph. At every step with probability 'p' (user value) we     fly back to the initial node.
     * Function : random_walk_sampling_with_fly_back(complete_graph, nodes_to_sample, fly_back_prob)
