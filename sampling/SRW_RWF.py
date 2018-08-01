@@ -18,7 +18,6 @@ class SRW_RWF():
         self.fly_back_prob = 0.15
 
     def random_walk_sampling_simple(self,complete_graph, nodes_to_sample):
-        print "Sampling method: Simple Random Walk Sampling "
         complete_graph = nx.convert_node_labels_to_integers(complete_graph, 0, 'default', True)
         # giving unique id to every node same as built-in function id
         for n, data in complete_graph.nodes(data=True):
@@ -50,7 +49,6 @@ class SRW_RWF():
         return sampled_graph
 
     def random_walk_sampling_with_fly_back(self,complete_graph, nodes_to_sample, fly_back_prob):
-        print "Sampling Method: Random Walk sampling With Fly Back"
         complete_graph = nx.convert_node_labels_to_integers(complete_graph, 0, 'default', True)
         # giving unique id to every node same as built-in function id
         for n, data in complete_graph.nodes(data=True):
@@ -87,7 +85,6 @@ class SRW_RWF():
         return sampled_graph
 
     def random_walk_induced_graph_sampling(self, complete_graph, nodes_to_sample):
-        print "Random Walk Sampling with Induced Bias"
         complete_graph = nx.convert_node_labels_to_integers(complete_graph, 0, 'default', True)
         # giving unique id to every node same as built-in function id
         for n, data in complete_graph.nodes(data=True):
