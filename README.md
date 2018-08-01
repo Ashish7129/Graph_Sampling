@@ -33,7 +33,7 @@ Sampling large graphs can be done by the following exploration techniques:
   ```sh  
    induced_mhrw(complete_graph, nodes_to_sample, nodes) 
    ```
-   - **Total Induction Edge Sampling (TIES) :**
+   - **Total Induction Edge Sampling (TIES) :** In our approach, we select nodes in pairs by sampling edges in the same manner as the classic edge sampling approach. The key difference between our approach and ES is in the induced graph step; we augment the edges selected by the edge sampling step by including other edges between the set of sampled nodes.
   ```sh 
    ties(complete_graph, nodes_to_sample, phi)
   ```
