@@ -5,6 +5,7 @@ This is a simple sampling repo that helps you find a representative sample of th
 ### Sampling Algorithms
 Sampling large graphs can be done by the following exploration techniques:
   - **Simple Random Walk Sampling (SRW) :** Uniformly at random pick a starting node and then simulate a random walk on the graph.
+   
     ```sh 
     random_walk_sampling_simple(complete_graph, nodes_to_sample)
     ```
