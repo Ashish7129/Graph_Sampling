@@ -2,7 +2,7 @@
 
 Graph sampling is a technique to pick a subset of vertices and/ or edges from original graph. In some scenarios, the whole graph is known and the purpose of sampling is to obtain a smaller graph. In other scenarios, the graph is unknown and sampling is regarded as a way to explore the graph. The biggest advantage of sampling methods are their execution efficiency so that the graph transformation procedure won’t take longer time than straightforward computation on original graph. This is a simple sampling repo that helps you find a representative sample of the original graph via different sampling techniques. 
 
-### Sampling Algorithms
+### Sampling Techniques
 Sampling large graphs can be done by the following exploration techniques:
   - **Simple Random Walk Sampling (SRW) :** Uniformly at random pick a starting node and then simulate a random walk on the graph.
    
@@ -37,7 +37,7 @@ Sampling large graphs can be done by the following exploration techniques:
   
 
 ### Pre-requisite
-The Sampling package requires [Python](https://www.python.org/downloads/) 2.7,3.4,3.5,3.6. If you don't have the pre-installed python in your system, please follow up the python link to download it. This package also requires [Networkx](https://networkx.github.io/documentation/latest/install.html) 2.1 or newer which helps to create the graphs and also perform manipulations on them.
+The Sampling package requires [Python](https://www.python.org/downloads/) 2.7, 3.4, 3.5, 3.6 or newer. If you don't have the pre-installed python in your system, please follow up the python link to download it. This package also requires [Networkx](https://networkx.github.io/documentation/latest/install.html) 2.1 or newer which helps to create the graphs and also perform manipulations on them.
 
 ### Installing the development version
 If you have Git installed on your system, then it is also possible to install the development version of Sampling package by running these commands on your terminal:
