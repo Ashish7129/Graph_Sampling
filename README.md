@@ -58,15 +58,15 @@ After installing the package, you can use the package by writing the following c
 ```sh
 >>> import Sampling 
 ```
-### test.py
+### Example
 Check out the file test.py, which helps you to understand the procedure of executing different functions along with there type and number of arguments. For example, snowball sampling fuction is excecuted as follows:
 ```sh
 >>> object = Sampling.Snowball()             
 >>> sampled_graph = object.snowball(G,size,k) 
 ```
-*The object is the instance of the class Snowball. The class having the snowball function has 3 parameters as
-G : Original Graph / Whole Graph, 
-size: number of nodes to sample and 
-k: initial set of k nodes.*
+*The object is the instance of the class Snowball. The class having the snowball function has 3 parameters as*
+  - G : Original Graph / Whole Graph, 
+  - size: number of nodes to sample and 
+  - k: initial set of k nodes.
 
 
