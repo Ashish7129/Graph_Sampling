@@ -6,6 +6,7 @@ This is a simple sampling package which helps you find a representative sample o
   - Snowball Sampling (SB)
   - ForestFire Sampling (FF)
   - Metropolis Hastings Random Walk (MHRW)
+  - Induced Metropolis Hastings Random Walk (Induced-MHRW) 
   - Total Induction Edge Sampling (TIES)
   
 ### Pre-requisite
