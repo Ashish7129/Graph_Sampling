@@ -45,3 +45,8 @@ class MHRW():
                 node_list.clear()
                 node_list.update(related_list)
         return self.G1
+    
+    def induced_mhrw(self,G,size,node):
+        sampled_graph = mhrw(self.G1,G,size,node)
+        induced_graph = G.subgraph(sampled_graph.nodes())
+        return induced_graph
