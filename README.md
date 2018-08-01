@@ -1,6 +1,6 @@
 # Sampling Package
 
-This is a simple sampling repo that helps you find a representative sample of the original graph. 
+Graph sampling is a technique to pick a subset of vertices and/ or edges from original graph. In some scenarios, the whole graph is known and the purpose of sampling is to obtain a smaller graph. In other scenarios, the graph is unknown and sampling is regarded as a way to explore the graph. The biggest advantage of sampling methods are their execution efficiency so that the graph transformation procedure won’t take longer time than straightforward computation on original graph. This is a simple sampling repo that helps you find a representative sample of the original graph via different sampling techniques. 
 
 ### Sampling Algorithms
 Sampling large graphs can be done by the following exploration techniques:
