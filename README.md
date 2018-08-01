@@ -64,7 +64,9 @@ Check out the file test.py, which helps you to understand the procedure of execu
 >>> object = Sampling.Snowball()             
 >>> sampled_graph = object.snowball(G,size,k) 
 ```
-* The object is the instance of the class Snowball. Class having the snowball function has 3 parameters as
-G : Original Graph / Whole Graph, size: number of nodes to sample and k: initial set of k nodes.*
+*The object is the instance of the class Snowball. The class having the snowball function has 3 parameters as
+G : Original Graph / Whole Graph, 
+size: number of nodes to sample and 
+k: initial set of k nodes.*
 
 
