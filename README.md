@@ -29,7 +29,11 @@ Sampling large graphs can be done by the following exploration techniques:
     ```sh  
     mhrw(complete_graph, nodes_to_sample, nodes) 
     ```
-  - **Total Induction Edge Sampling (TIES) :**
+   - **Induced Metropolis Hastings Random Walk Sampling (Induced-MHRW) :** This is the improvement in MHRW sampling by appling induction step to add additional edges.
+      ```sh  
+      induced_mhrw(complete_graph, nodes_to_sample, nodes) 
+      ```
+   - **Total Induction Edge Sampling (TIES) :**
      ```sh 
      ties(complete_graph, nodes_to_sample, phi)
      ```
