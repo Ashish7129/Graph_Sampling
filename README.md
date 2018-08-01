@@ -17,7 +17,7 @@ Sampling large graphs can be done by the following exploration techniques:
      ```sh 
      random_walk_induced_graph_sampling(complete_graph, nodes_to_sample)
      ```
-  - **Snowball Sampling (SB) :** A Snowball is a variant of Breadth First Search where we can limit the number of neighbors k that are added to the sample. We begin from a random set of nodes of size k. After that each of the new k nodes are added that make the second sampling stage. This continues until the size is reached.
+  - **Snowball Sampling (SB) :** Snowball Sampling is a variant of Breadth First Search where we can limit the number of neighbors k that are added to the sample. We begin from a random set of nodes of size k. After that each of the new k nodes are added that make the second sampling stage. This continues until the size is reached.
      ```sh 
      snowball(complete_graph, nodes_to_sample, k) 
      ```
