@@ -63,7 +63,7 @@ After installing the package, you can use the package by writing the following c
 >>> import Sampling 
 ```
 ### Example
-Check out the file test.py, which helps you to understand the procedure of executing different functions along with there type and number of arguments. For example, snowball sampling fuction is excecuted as follows:
+Check out the file test.py, which helps you to understand the procedure of executing different functions along with their type and number of arguments. For example, snowball sampling fuction is excecuted as follows:
 ```sh
 >>> object = Sampling.Snowball()             
 >>> sampled_graph = object.snowball(G,size,k) 
