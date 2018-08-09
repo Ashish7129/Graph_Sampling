@@ -46,7 +46,7 @@ The Sampling package requires [Python](https://www.python.org/downloads/) 2.7, 3
 ### Installing the development version
 If you have Git installed on your system, then it is also possible to install the development version of Sampling package by running these commands on your terminal:
 ```sh
-$ git clone https://github.com/Ashish7129/Sampling.git
+$ git clone https://github.com/Ashish7129/Graph-Sampling.git
 $ cd Sampling
 $ pip install -e .
 ```
