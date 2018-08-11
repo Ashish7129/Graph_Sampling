@@ -41,17 +41,16 @@ Exploration or traversal (also called topology-based) approaches are based on th
   
 
 ### Pre-requisite
-The Sampling package requires [Python](https://www.python.org/downloads/) 2.7, 3.4, 3.5, 3.6 or newer. If you don't have the pre-installed python in your system, please follow up the python link to download it. This package also requires [Networkx](https://networkx.github.io/documentation/latest/install.html) 2.1 or newer which helps to create the graphs and also perform manipulations on them.
+The Graph Sampling package requires [Python](https://www.python.org/downloads/) 2.7, 3.4, 3.5, 3.6 or newer. If you don't have the pre-installed python in your system, please follow up the python link to download it. This package also requires [Networkx](https://networkx.github.io/documentation/latest/install.html) 2.1 or newer which helps to create the graphs and also perform manipulations on them.
 
 ### Installing the development version
-If you have Git installed on your system, then it is also possible to install the development version of Sampling package by running these commands on your terminal:
+If you have Git installed on your system, then it is also possible to install the development version of Graph Sampling package by running these commands on your terminal:
 ```sh
 $ git clone https://github.com/Ashish7129/Graph-Sampling.git
 $ cd Sampling
 $ pip install -e .
 ```
-Or you can install the current release of Sampling package with pip. Please
-download the zip file and locate it into the current folder and then run the following command for installing the sampling package into your system:
+Or you can install the current release of Graph Sampling package with pip. Please download the zip file and locate it into the current folder and then run the following command for installing the graph sampling package into your system:
 ```sh
 $ pip install Sampling
 ```
