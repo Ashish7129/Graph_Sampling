@@ -1,9 +1,10 @@
 # Graph Sampling Package
 
+Social Network Analysis (SNA) has recently been gaining more and more popularity in various domains. Unfortunately, performing SNA is not always an easy task. Not because it is difficult to construct corresponding network (although, this might, as well, happen in some cases), but since, due to the volume of data which translates to huge network/graph, it is very time consuming and computationally expensive to perform analysis on these graphs. Depending on the type of task, handling graphs with even just dozens of thousands of nodes can be unfeasible, as some studies show. An intuitive solution to deal with this situation, just as in any scenario where we have a massive amount of data, is to sample the graph and then perform relevant simulation/analysis on obtained sub-graph.
 Graph sampling is a technique to pick a subset of vertices or edges from original graph. The biggest advantage of sampling methods are their execution efficiency so that the graph transformation procedure won’t take longer time than straightforward computation on original graph. This is a simple sampling repo that helps you find a representative sample of the original graph via different [Sampling Techniques](https://cs.stanford.edu/~jure/pubs/sampling-kdd06.pdf). 
 
 ### Graph Sampling Techniques
-Sampling large graphs can be done by the following exploration techniques:
+Exploration or traversal (also called topology-based) approaches are based on the idea of randomly selecting one node and then exploring its neighborhood. Some of sampling by exploration techniques are listed below:
   - **Simple Random Walk Sampling (SRW) :** Uniformly at random pick a starting node and then simulate a random walk on the graph.
     ```sh 
     random_walk_sampling_simple(complete_graph, nodes_to_sample)
