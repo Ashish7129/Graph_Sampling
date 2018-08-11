@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="Sampling",
+    name="Graph Sampling",
     version="0.0.1",
     author="Ashish Aggarwal",
     author_email="ashish.mcs16.du@gmail.com",
