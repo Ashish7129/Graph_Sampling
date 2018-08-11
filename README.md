@@ -1,15 +1,14 @@
 # Graph Sampling Package
 
-Graph sampling is a technique to pick a subset of vertices or edges from original graph. In some scenarios, the whole graph is known and the purpose of sampling is to obtain a smaller graph. In other scenarios, the graph is unknown and sampling is regarded as a way to explore the graph. The biggest advantage of sampling methods are their execution efficiency so that the graph transformation procedure won’t take longer time than straightforward computation on original graph. This is a simple sampling repo that helps you find a representative sample of the original graph via different sampling techniques. 
+Graph sampling is a technique to pick a subset of vertices or edges from original graph. The biggest advantage of sampling methods are their execution efficiency so that the graph transformation procedure won’t take longer time than straightforward computation on original graph. This is a simple sampling repo that helps you find a representative sample of the original graph via different [Sampling Techniques](https://cs.stanford.edu/~jure/pubs/sampling-kdd06.pdf). 
 
 ### Graph Sampling Techniques
 Sampling large graphs can be done by the following exploration techniques:
   - **Simple Random Walk Sampling (SRW) :** Uniformly at random pick a starting node and then simulate a random walk on the graph.
-   
     ```sh 
     random_walk_sampling_simple(complete_graph, nodes_to_sample)
     ```
-  - **Random Walk Sampling with Fly Back Probability (RWF) :** Uniformly at random pick a starting node and then simulate a random walk on the graph. At every step with probability 'p' (user value) we fly back to the initial node.
+  - **Random Walk Sampling with Fly Back Probability (RWF) :** Uniformly at random pick a starting node and then simulate a random walk on the graph. At every step with probability 'p' (user value) fly back to the initial node.
     ```sh 
     random_walk_sampling_with_fly_back(complete_graph, nodes_to_sample, fly_back_prob)
     ```
@@ -17,7 +16,7 @@ Sampling large graphs can be done by the following exploration techniques:
      ```sh 
     random_walk_induced_graph_sampling(complete_graph, nodes_to_sample)
      ```
-  - **Snowball Sampling (SB) :** Snowball Sampling is a variant of Breadth First Search where we can limit the number of neighbors k that are added to the sample. We begin from a random set of nodes of size k. After that each of the new k nodes are added that make the second sampling stage. This continues until the size is reached.
+  - **Snowball Sampling (SB) :** Snowball Sampling is a variant of Breadth First Search where there is limit on the number of neighbors 'k' that are added to the sample. Begin from a random set of nodes of size 'k'. After that each of the new 'k' nodes are added that make the second sampling stage. This continues until the sample size is reached.
      ```sh 
     snowball(complete_graph, nodes_to_sample, k) 
      ```
@@ -25,7 +24,7 @@ Sampling large graphs can be done by the following exploration techniques:
    ```sh 
    forestfire(complete_graph, nodes_to_sample) 
   ```
-  - **Metropolis Hastings Random Walk Sampling (MHRW) :** This is very similar to random walk sampling except for the fact that we randomly select a node in graph with probability 'p'.
+  - **Metropolis Hastings Random Walk Sampling (MHRW) :** This is very similar to random walk sampling except for the fact that a node is selected randomly in graph with probability 'p'.
    ```sh  
    mhrw(complete_graph, nodes_to_sample, nodes) 
    ```
@@ -33,7 +32,7 @@ Sampling large graphs can be done by the following exploration techniques:
   ```sh  
    induced_mhrw(complete_graph, nodes_to_sample, nodes) 
    ```
-   - **Total Induction Edge Sampling (TIES) :** In our approach, we select nodes in pairs by sampling edges in the same manner as the classic edge sampling approach. The key difference between our approach and normal edge sampling is in the induced graph step; we augment the edges selected by the edge sampling step by including other edges between the set of sampled nodes.
+   - **Total Induction Edge Sampling (TIES) :** In this approach, nodes are selected in pairs by sampling edges in the same manner as the classic edge sampling approach. The key difference between this approach and normal edge sampling is in the induced graph step; augments the edges selected by the edge sampling step by including other edges between the set of sampled nodes.
   ```sh 
    ties(complete_graph, nodes_to_sample, phi)
   ```
