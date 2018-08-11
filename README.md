@@ -1,11 +1,11 @@
 # Graph Sampling Package
 
 Social Network Analysis (SNA) has recently been gaining more and more popularity in various domains. Unfortunately, performing SNA is not always an easy task. Not because it is difficult to construct corresponding network (although, this might, as well, happen in some cases), but since, due to the volume of data which translates to huge network/graph, it is very time consuming and computationally expensive to perform analysis on these graphs. Depending on the type of task, handling graphs with even just dozens of thousands of nodes can be unfeasible, as some studies show. An intuitive solution to deal with this situation, just as in any scenario where we have a massive amount of data, is to sample the graph and then perform relevant simulation/analysis on obtained sub-graph.
-Graph sampling is a technique to pick a subset of vertices or edges from original graph. The biggest advantage of sampling methods are their execution efficiency so that the graph transformation procedure won’t take longer time than straightforward computation on original graph. This is a simple sampling repo that helps you find a representative sample of the original graph via different [Sampling Techniques](https://cs.stanford.edu/~jure/pubs/sampling-kdd06.pdf). 
+[Graph sampling](https://en.wikipedia.org/wiki/Sampling_(statistics)) is a technique to pick a subset of vertices or edges from original graph. The biggest advantage of sampling methods are their execution efficiency so that the graph transformation procedure won’t take longer time than straightforward computation on original graph. This is a simple sampling repo that helps you find a representative sample of the original graph via different [Sampling Techniques](https://cs.stanford.edu/~jure/pubs/sampling-kdd06.pdf). 
 
 ### Graph Sampling Techniques
 Exploration or traversal (also called topology-based) approaches are based on the idea of randomly selecting one node and then exploring its neighborhood. Some of sampling by exploration techniques are listed below:
-  - **Simple Random Walk Sampling (SRW) :** Uniformly at random pick a starting node and then simulate a random walk on the graph.
+  - **Simple Random Walk Sampling (SRW) :** Uniformly at random pick a starting node and then simulate a [random walk](https://people.math.osu.edu/husen.1/teaching/571/random_walks.pdf) on the graph.
     ```sh 
     random_walk_sampling_simple(complete_graph, nodes_to_sample)
     ```
@@ -13,11 +13,11 @@ Exploration or traversal (also called topology-based) approaches are based on th
     ```sh 
     random_walk_sampling_with_fly_back(complete_graph, nodes_to_sample, fly_back_prob)
     ```
-  - **Induced Subgraph Random Walk Sampling (ISRW) :** Sample nodes by random walk sampling and then applied induction step to add additional edges.
+  - **Induced Subgraph Random Walk Sampling (ISRW) :** Sample nodes by random walk sampling and then applied [induction](https://en.wikipedia.org/wiki/Induced_subgraph) step to add additional edges.
      ```sh 
     random_walk_induced_graph_sampling(complete_graph, nodes_to_sample)
      ```
-  - **Snowball Sampling (SB) :** Snowball Sampling is a variant of Breadth First Search where there is limit on the number of neighbors 'k' that are added to the sample. Begin from a random set of nodes of size 'k'. After that each of the new 'k' nodes are added that make the second sampling stage. This continues until the sample size is reached.
+  - **Snowball Sampling (SB) :** Snowball Sampling is a variant of [Breadth First Search](https://en.wikipedia.org/wiki/Breadth-first_search) where there is limit on the number of neighbors 'k' that are added to the sample. Begin from a random set of nodes of size 'k'. After that each of the new 'k' nodes are added that make the second sampling stage. This continues until the sample size is reached.
      ```sh 
     snowball(complete_graph, nodes_to_sample, k) 
      ```
@@ -29,11 +29,11 @@ Exploration or traversal (also called topology-based) approaches are based on th
    ```sh  
    mhrw(complete_graph, nodes_to_sample, nodes) 
    ```
-   - **Induced Metropolis Hastings Random Walk Sampling (Induced-MHRW) :** This is the improvement in MHRW sampling by appling induction step to add additional edges.
+   - **Induced Metropolis Hastings Random Walk Sampling (Induced-MHRW) :** This is the improvement in MHRW sampling by appling [induction](https://en.wikipedia.org/wiki/Induced_subgraph) step to add additional edges.
   ```sh  
    induced_mhrw(complete_graph, nodes_to_sample, nodes) 
    ```
-   - **Total Induction Edge Sampling (TIES) :** In this approach, nodes are selected in pairs by sampling edges in the same manner as the classic edge sampling approach. The key difference between this approach and normal edge sampling is in the induced graph step; augments the edges selected by the edge sampling step by including other edges between the set of sampled nodes.
+   - **Total Induction Edge Sampling (TIES) :** In this approach, nodes are selected in pairs by sampling edges in the same manner as the classic [edge sampling](https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=2743&context=cstech) approach. The key difference between this approach and normal edge sampling is in the induced graph step; augments the edges selected by the edge sampling step by including other edges between the set of sampled nodes.
   ```sh 
    ties(complete_graph, nodes_to_sample, phi)
   ```
