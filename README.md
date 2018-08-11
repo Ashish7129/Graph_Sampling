@@ -4,7 +4,7 @@
 [Graph sampling](https://en.wikipedia.org/wiki/Sampling_(statistics)) is a technique to pick a subset of vertices or edges from original graph. The biggest advantage of sampling methods are their execution efficiency so that the graph transformation procedure won’t take longer time than straightforward computation on original graph. This is a simple sampling repo that helps you find a representative sample of the original graph via different [Sampling Techniques](https://cs.stanford.edu/~jure/pubs/sampling-kdd06.pdf). 
 
 ### Graph Sampling Techniques
-Exploration or traversal (also called topology-based) approaches are based on the idea of randomly selecting one node and then exploring its neighborhood. Some of sampling by exploration techniques are listed below:
+Exploration or traversal (also called topology-based) approaches are based on the idea of randomly selecting one node and then exploring its neighborhood. Some of sampling by exploration techniques are listed below :
   - **Simple Random Walk Sampling (SRW) :** Uniformly at random pick a starting node and then simulate a [random walk](https://people.math.osu.edu/husen.1/teaching/571/random_walks.pdf) on the graph.
     ```sh 
     sampled_subgraph = random_walk_sampling_simple(complete_graph, nodes_to_sample)
@@ -65,9 +65,9 @@ After installing the package, you can use the package by writing the following c
 Check out the file test.py, which helps you to understand the procedure of executing different functions along with their type and number of arguments. For example, snowball sampling fuction is excecuted as follows:
 ```sh
 >>> object = Sampling.Snowball()             
->>> sampled_graph = object.snowball(G,size,k) 
+>>> sampled_subgraph = object.snowball(G,size,k) 
 ```
-*The object is the instance of the class Snowball. The class having the snowball function has 3 parameters as*
+*The object is the instance of the class Snowball. The class having the snowball function has 3 parameters as :*
   - G : Original Graph / Whole Graph, 
   - size: number of nodes to sample and 
   - k: initial set of k nodes.
