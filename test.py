@@ -1,6 +1,7 @@
 import sampling 
 import networkx as nx
 
+# read facebook network edge list "fb.txt" and return a graph g. 
 g = nx.read_edgelist("fb.txt", create_using= nx.Graph(),nodetype=int)
 
 # make an object and call function SRW
@@ -11,7 +12,7 @@ print("Number of edges sampled=",len(sample1.edges()))
 
 # make an object and call function RWF
 object2=sampling.SRW_RWF()
-sample2= object2.random_walk_sampling_with_fly_back(g,110,0.2)  # graph, number of nodes to sample, fly-back prob
+sample2= object2.random_walk_sampling_with_fly_back(g,110,0.2)  # graph, number of nodes to sample, fly-back probability
 print("Number of nodes sampled=",len(sample2.nodes()))
 print("Number of edges sampled=",len(sample2.edges()))
 
