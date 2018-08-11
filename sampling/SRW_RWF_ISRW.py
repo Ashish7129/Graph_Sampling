@@ -8,7 +8,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from itertools import groupby
 
-class SRW_RWF():
+class SRW_RWF_ISRW():
 
     def __init__(self):
         self.growth_size = 2
