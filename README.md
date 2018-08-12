@@ -22,21 +22,21 @@ Exploration or traversal (also called topology-based) approaches are based on th
     sampled_subgraph = snowball(complete_graph, nodes_to_sample, k) 
      ```
   - **ForestFire Sampling (FF) :** Randomly pick a seed node and begin “burning” outgoing links and the corresponding nodes. If a link gets burned, the node at the other endpoint gets a chance to burn its own links, and so on recursively.
-   ```sh 
-   sampled_subgraph = forestfire(complete_graph, nodes_to_sample) 
-  ```
+    ```sh 
+    sampled_subgraph = forestfire(complete_graph, nodes_to_sample) 
+    ```
   - **Metropolis Hastings Random Walk Sampling (MHRW) :** This is very similar to random walk sampling except for the fact that a node is selected randomly in graph with probability 'p'.
-   ```sh  
-   sampled_subgraph = mhrw(complete_graph, nodes_to_sample, nodes) 
-   ```
+    ```sh  
+    sampled_subgraph = mhrw(complete_graph, nodes_to_sample, nodes) 
+    ```
    - **Induced Metropolis Hastings Random Walk Sampling (Induced-MHRW) :** This is the improvement in MHRW sampling by appling [induction](https://en.wikipedia.org/wiki/Induced_subgraph) step to add additional edges.
-  ```sh  
-   sampled_subgraph = induced_mhrw(complete_graph, nodes_to_sample, nodes) 
+    ```sh  
+    sampled_subgraph = induced_mhrw(complete_graph, nodes_to_sample, nodes) 
    ```
    - **Total Induction Edge Sampling (TIES) :** In this approach, nodes are selected in pairs by sampling edges in the same manner as the classic [edge sampling](https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=2743&context=cstech) approach. The key difference between this approach and normal edge sampling is in the induced graph step; augments the edges selected by the edge sampling step by including other edges between the set of sampled nodes.
-  ```sh 
+   ```sh 
    sampled_subgraph = ties(complete_graph, nodes_to_sample, phi)
-  ```
+   ```
   
   
 
