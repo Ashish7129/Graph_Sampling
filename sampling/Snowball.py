@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from collections import defaultdict
 
 
-class Queue:
+class Queue():
     #Constructor creates a list
     def __init__(self):
         self.queue = list()
