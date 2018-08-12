@@ -30,8 +30,8 @@ Exploration or traversal (also called topology-based) approaches are based on th
     sampled_subgraph = mhrw(complete_graph, nodes_to_sample, nodes) 
     ```
    - **Induced Metropolis Hastings Random Walk Sampling (Induced-MHRW) :** This is the improvement in MHRW sampling by appling [induction](https://en.wikipedia.org/wiki/Induced_subgraph) step to add additional edges.
-    ```sh  
-    sampled_subgraph = induced_mhrw(complete_graph, nodes_to_sample, nodes) 
+   ```sh  
+   sampled_subgraph = induced_mhrw(complete_graph, nodes_to_sample, nodes) 
    ```
    - **Total Induction Edge Sampling (TIES) :** In this approach, nodes are selected in pairs by sampling edges in the same manner as the classic [edge sampling](https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=2743&context=cstech) approach. The key difference between this approach and normal edge sampling is in the induced graph step; augments the edges selected by the edge sampling step by including other edges between the set of sampled nodes.
    ```sh 
