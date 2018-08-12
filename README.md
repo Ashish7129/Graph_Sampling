@@ -31,13 +31,13 @@ Exploration or traversal (also called topology-based) approaches are based on th
 ```sh 
   sampled_subgraph = forestfire(complete_graph, nodes_to_sample) 
 ```
-- **Metropolis Hastings Random Walk Sampling (MHRW) :** This is very similar to random walk sampling. In this approach, starting from node *u*, we would simulate random walk, and adjust the probability of accepting node’s *u* neighbor node *v*, so that the resulting random walk converges to desired (uniform) distribution. .
+- **Metropolis Hastings Random Walk Sampling (MHRW) :** This is very similar to random walk sampling. Initially, a randomly selected node *v*  with non-zero degree is set as the seed. We define the proposal function as *Q(v) = k<sub>v</sub>*, which is the degree of node *v*. From node *v’s* neighbors, *MHRW* randomly chooses a node *w*, and then generates a random number *p* from uniform distribution *U(0, 1)*. If *p ≤ Q(v)/Q(w)*, the proposal is accepted and the sampling process will transit to *w*; otherwise, it stays at node *v*. MHRW stops when the budget is reached.
 ```sh  
-  sampled_subgraph = mhrw(complete_graph, nodes_to_sample, initial_node) 
+  sampled_subgraph = mhrw(complete_graph, nodes_to_sample, initial_seed_node) 
 ```
 - **Induced Metropolis Hastings Random Walk Sampling (Induced-MHRW) :** This is the improvement in MHRW sampling by appling [induction](https://en.wikipedia.org/wiki/Induced_subgraph) step to add additional edges.
 ```sh  
-  sampled_subgraph = induced_mhrw(complete_graph, nodes_to_sample, initial_node) 
+  sampled_subgraph = induced_mhrw(complete_graph, nodes_to_sample, initial_seed_node) 
 ```
 
 ### 2. Edge Sampling 
