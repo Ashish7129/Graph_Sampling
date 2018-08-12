@@ -9,42 +9,42 @@ Exploration or traversal (also called topology-based) approaches are based on th
 - **Simple Random Walk Sampling (SRW) :** Uniformly at random pick a starting node and then simulate a [random walk](https://people.math.osu.edu/husen.1/teaching/571/random_walks.pdf)(select neighboring node uniformly and randomly) on the graph. Random walk is continued until we reach the required sample size *n<sub>s</sub>*.
   <p> In the unconnected graph, it is possible that there is no node in the component that could be added to the sample. To handle this we defined a period <em>T</em> and an expected growth size <em>M</em> in that period and after <em>T</em> iterations check whether the sample growth is large enough and if not, select again the node randomly to continue random walk. This way we ensure that the sample will reach the required size <em>n<sub>s</sub></em>.</p>
 ```sh 
-  sampled_subgraph = random_walk_sampling_simple(complete_graph, nodes_to_sample)
+  sampled_graph = random_walk_sampling_simple(complete_graph, nodes_to_sample)
 ```
 
 - **Random Walk Sampling with Fly Back Probability (RWF) :** In *SRW* at any stage, we choose only one of the neighboring node to continue random walk. Choosing only one neighboring node affects graph properties like average degree which in turn affect many properties related to it.
   <p> <em>RWF</em> is a variation of random walk to improve the performance. The Fly-back probability <em>(p)</em> is used to sample more than one neighboring node at any stage of already sampled node. <em>RWF</em> picks a node uniformly at random as start point and begins a sequence. At each step, with <em>1-p</em> probability it selects one node among neighbors of the current node with equal probability and moves to that node. If the neighboring node or the corresponding edge does not exist in the sample graph, they will be added to the graph; with <em>p</em> probability, we will fly back to the starting point. This ensures that the neighborhood of a selected node could be sufficiently explored. The higher the fly back probability, the more similar random walk is to <a href="https://en.wikipedia.org/wiki/Breadth-first_search">Breadth First Search</a>. </p>
   <p>To avoid being stuck we defined a period <em>T</em> and an expected growth size <em>M</em> in that period and after <em>T</em> iterations check whether the sample growth is large enough and if not, select again the node randomly to continue random walk. This way we ensure that the sample will reach the required size <em>n<sub>s</sub></em> .</p>
 ```sh 
-  sampled_subgraph = random_walk_sampling_with_fly_back(complete_graph, nodes_to_sample, fly_back_prob)
+  sampled_graph = random_walk_sampling_with_fly_back(complete_graph,nodes_to_sample,fly_back_prob)
 ```
 - **Induced Subgraph Random Walk Sampling (ISRW) :**  We observed that *SRW* and *RWF* fundamentally biases the structure of the sampled subgraph, as at every step we choose only one neighbor uniformly and randomly of the node we sampled at the previous iteration. When a node is selected for inclusion in the sample, it is unlikely that all of its neighbors will be included in the sampled subgraph, and thus, sampled degrees of nodes tend to be smaller than original degrees. As random walk moves in the linear fashion, the connectivity in the sampled subgraph was also quite sparse due to under-sampling of edges. This under-sampling of edges caused overestimation of shortest path lengths in sampled subgraphs. Hence, this conventional wisdom of selecting nodes in an unbiased manner (e.g., uniformly at random) may not yield representative subgraphs that match the properties of the original graph.
   <p>So, we presented our new sampling strategy, <em>Induced Subgraph Random Walk Sampling (ISRW)</em>, which tries to overcome the problem of undersampling of edges in <em>SRW</em>. We applied graph <a href="https://en.wikipedia.org/wiki/Induced_subgraph">induction</a> step to <em>SRW</em> to select additional edges between sampled nodes with the aim to restore connectivity and bring the structure closer to that of the original graph.</p>
 ```sh 
-  sampled_subgraph = random_walk_induced_graph_sampling(complete_graph, nodes_to_sample)
+  sampled_graph = random_walk_induced_graph_sampling(complete_graph, nodes_to_sample)
 ```
 - **Snowball Sampling (SB) :** Snowball Sampling is a variant of [Breadth First Search](https://en.wikipedia.org/wiki/Breadth-first_search) where there is limit on the number of neighbors <em>k</em> that are added to the sample. Begin from a random set of nodes of size <em>k</em>. After that each of the new <em>k</em> nodes are added that make the second sampling stage. This continues until the sample size is reached.
 ```sh 
-  sampled_subgraph = snowball(complete_graph, nodes_to_sample, k) 
+  sampled_graph = snowball(complete_graph, nodes_to_sample, k) 
 ```
 - **ForestFire Sampling (FF) :** Randomly pick a seed node and begin “burning” outgoing links and the corresponding nodes. If a link gets burned, the node at the other endpoint gets a chance to burn its own links. This process is recursively repeated for each burnt neighbor until no new node is selected, and a new random node is chosen to start the process until we obtain the desired sample size.
 ```sh 
-  sampled_subgraph = forestfire(complete_graph, nodes_to_sample) 
+  sampled_graph = forestfire(complete_graph, nodes_to_sample) 
 ```
 - **Metropolis Hastings Random Walk Sampling (MHRW) :** This is very similar to random walk sampling. Initially, a randomly selected node *v*  with non-zero degree is set as the seed. We define the proposal function as *Q(v) = k<sub>v</sub>*, which is the degree of node *v*. From node *v’s* neighbors, *MHRW* randomly chooses a node *w*, and then generates a random number *p* from uniform distribution *U(0, 1)*. If *p ≤ Q(v)/Q(w)*, the proposal is accepted and the sampling process will transit to *w*; otherwise, it stays at node *v*. MHRW stops when the budget is reached.
 ```sh  
-  sampled_subgraph = mhrw(complete_graph, nodes_to_sample, initial_seed_node) 
+  sampled_graph = mhrw(complete_graph, nodes_to_sample, initial_seed_node) 
 ```
 - **Induced Metropolis Hastings Random Walk Sampling (Induced-MHRW) :** This is the improvement in MHRW sampling by appling [induction](https://en.wikipedia.org/wiki/Induced_subgraph) step to add additional edges.
 ```sh  
-  sampled_subgraph = induced_mhrw(complete_graph, nodes_to_sample, initial_seed_node) 
+  sampled_graph = induced_mhrw(complete_graph, nodes_to_sample, initial_seed_node) 
 ```
 
 ### 2. Edge Sampling 
 Edge sampling focuses on the selection of edges rather than nodes to populate the sample. Thus, the node selection step in edge sampling algorithm proceeds by just sampling edges, and including both nodes when a particular edge is sampled.
 - **Total Induction Edge Sampling (TIES) :** The algorithm runs in an iterative fashion, picking an edge at random from the original graph and adding both the nodes to the sampled node set in each iteration as in the classic [edge sampling](https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=2743&context=cstech) approach. It stops adding nodes once a target fraction *φ* of nodes are collected. After this, the algorithm proceeds to the graph induction step where it walks through all the edges in the graph and forms the induced graph by adding all edges which have both end-points already in the sampled node set.
 ```sh 
-  sampled_subgraph = ties(complete_graph, nodes_to_sample, φ)
+  sampled_graph = ties(complete_graph, nodes_to_sample, φ)
 ```
   
   
