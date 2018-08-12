@@ -31,13 +31,13 @@ Exploration or traversal (also called topology-based) approaches are based on th
 ```sh 
   sampled_subgraph = forestfire(complete_graph, nodes_to_sample) 
 ```
-- **Metropolis Hastings Random Walk Sampling (MHRW) :** This is very similar to random walk sampling except for the fact that a node is selected randomly in graph with probability <em>p</em>.
+- **Metropolis Hastings Random Walk Sampling (MHRW) :** This is very similar to random walk sampling. In this approach, starting from node *u*, we would simulate random walk, and adjust the probability of accepting node’s *u* neighbor node *v*, so that the resulting random walk converges to desired (uniform) distribution. .
 ```sh  
-  sampled_subgraph = mhrw(complete_graph, nodes_to_sample, nodes) 
+  sampled_subgraph = mhrw(complete_graph, nodes_to_sample, initial_node) 
 ```
 - **Induced Metropolis Hastings Random Walk Sampling (Induced-MHRW) :** This is the improvement in MHRW sampling by appling [induction](https://en.wikipedia.org/wiki/Induced_subgraph) step to add additional edges.
 ```sh  
-  sampled_subgraph = induced_mhrw(complete_graph, nodes_to_sample, nodes) 
+  sampled_subgraph = induced_mhrw(complete_graph, nodes_to_sample, initial_node) 
 ```
 
 ### 2. Edge Sampling 
