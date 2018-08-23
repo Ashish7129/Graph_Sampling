@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: Graph-Sampling
+Version: 0.0.1
+Summary: Graph Sampling Package
+Home-page: UNKNOWN
+Author: Ashish Aggarwal
+Author-email: ashish.mcs16.du@gmail.com
+License: UNKNOWN
+Description: A Graph Sampling package containing various approaches which samples the original graph according to different sample sizes
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
