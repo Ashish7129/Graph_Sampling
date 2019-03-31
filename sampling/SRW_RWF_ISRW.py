@@ -79,7 +79,7 @@ class SRW_RWF_ISRW():
             if iteration % self.T == 0:
                 if ((sampled_graph.number_of_edges() - edges_before_t_iter) < self.growth_size):
                     curr_node = random.randint(0, nr_nodes-1)
-                    print "Choosing another random node to continue random walk "
+                    print ("Choosing another random node to continue random walk ")
                 edges_before_t_iter = sampled_graph.number_of_edges()
 
         return sampled_graph
