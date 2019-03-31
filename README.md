@@ -52,7 +52,7 @@ Edge sampling focuses on the selection of edges rather than nodes to populate th
   
   
 ### Pre-requisite
-The Graph Sampling package requires [Python](https://www.python.org/downloads/) 2.7, 3.4, 3.5, 3.6 or newer. If you don't have the pre-installed python in your system, please follow up the python link to download it. This package also requires [Networkx](https://networkx.github.io/documentation/latest/install.html) 2.1 or newer which helps to create the graphs and also perform manipulations on them.
+The Graph Sampling package requires [Python](https://www.python.org/downloads/) 3.X . If you don't have the pre-installed python in your system, please follow up the python link to download it. This package also requires [Networkx](https://networkx.github.io/documentation/latest/install.html) 2.1 or newer which helps to create the graphs and also perform manipulations on them.
 
 ### Installing the development version
 If you have Git installed on your system, then it is also possible to install the development version of Graph Sampling package by running these commands on your terminal:
