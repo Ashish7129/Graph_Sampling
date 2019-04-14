@@ -58,24 +58,25 @@ The Graph Sampling package requires [Python](https://www.python.org/downloads/) 
 If you have Git installed on your system, then it is also possible to install the development version of Graph Sampling package by running these commands on your terminal:
 ```sh
 $ git clone https://github.com/Ashish7129/Graph-Sampling.git
-$ cd Graph-Sampling
+$ cd Graph_Sampling
 $ pip install -e .
 ```
 Or you can install the current release of Graph Sampling package with pip. Please download the zip file and locate it into the current folder and then run the following command for installing the graph sampling package into your system:
 ```sh
-$ pip install Sampling
+$ python setup.py sdist bdist_wheel
+$ pip install dist/Graph_Sampling-0.0.1-py3-none-any.whl
 ```
  
 ### Usage
 
 After installing the package, you can use the package by writing the following command:
 ```sh
->>> import Sampling 
+>>> import Graph_Sampling 
 ```
 ### Example
 Check out the file test.py, which helps you to understand the procedure of executing different functions along with their type and number of arguments. For example, snowball sampling fuction is excecuted as follows:
 ```sh
->>> object = Sampling.Snowball()             
+>>> object = Graph_Sampling.Snowball()             
 >>> sampled_subgraph = object.snowball(G,size,k) 
 ```
 *The object is the instance of the class Snowball. The class having the snowball function has 3 parameters as :*
