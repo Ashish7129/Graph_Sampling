@@ -63,10 +63,9 @@ $ pip install -e .
 ```
 Or you can install the current release of Graph Sampling package with pip. Please download the zip file and locate it into the current folder and then run the following command for installing the graph sampling package into your system:
 ```sh
-$ python setup.py sdist bdist_wheel
-$ pip install dist/Graph_Sampling-0.0.1-py3-none-any.whl
+$ pip install Sampling
 ```
- After installing the Graph_Sampling, Do check the package has installed successfully or not. By running the test.py 
+ 
 ### Usage
 
 After installing the package, you can use the package by writing the following command:
