@@ -3,8 +3,8 @@ Name: Graph-Sampling
 Version: 0.0.1
 Summary: Graph Sampling Package
 Home-page: UNKNOWN
-Author: Ashish Aggarwal
-Author-email: ashish.mcs16.du@gmail.com
+Authors: [Ashish Aggarwal, Kirti Jain]
+Authors-email: [ashish.mcs16.du@gmail.com,kirtij.mcs16.du@gmail.com]
 License: UNKNOWN
 Description: A Graph Sampling package containing various approaches which samples the original graph according to different sample sizes
 Platform: UNKNOWN
