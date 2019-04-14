@@ -19,7 +19,7 @@ print("Number of edges sampled=",len(sample2.edges()))
 # make an object and call function ISRW
 object3=Sampling.SRW_RWF_ISRW()
 sample3= object3.random_walk_induced_graph_sampling(g,120)  # graph, number of nodes to sample
-print "Number of nodes sampled=",len(sample3.nodes())
+print("Number of nodes sampled=",len(sample3.nodes()))
 print("Number of edges sampled=",len(sample3.edges()))
 
 # make an object and call function SB
