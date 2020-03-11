@@ -22,14 +22,14 @@ class SRW_RWF_ISRW:
         complete_graph = nx.convert_node_labels_to_integers(complete_graph, 0, 'default', True)
         # giving unique id to every node same as built-in function id
         for n, data in complete_graph.nodes(data=True):
-            complete_graph.node[n]['id'] = n
+            complete_graph.nodes[n]['id'] = n
 
         nr_nodes = len(complete_graph.nodes())
         upper_bound_nr_nodes_to_sample = nodes_to_sample
         index_of_first_random_node = random.randint(0, nr_nodes - 1)
         sampled_graph = nx.Graph()
 
-        sampled_graph.add_node(complete_graph.node[index_of_first_random_node]['id'])
+        sampled_graph.add_node(complete_graph.nodes[index_of_first_random_node]['id'])
 
         iteration = 1
         edges_before_t_iter = 0
@@ -53,7 +53,7 @@ class SRW_RWF_ISRW:
         complete_graph = nx.convert_node_labels_to_integers(complete_graph, 0, 'default', True)
         # giving unique id to every node same as built-in function id
         for n, data in complete_graph.nodes(data=True):
-            complete_graph.node[n]['id'] = n
+            complete_graph.nodes[n]['id'] = n
 
         nr_nodes = len(complete_graph.nodes())
         upper_bound_nr_nodes_to_sample = nodes_to_sample
@@ -61,7 +61,7 @@ class SRW_RWF_ISRW:
         index_of_first_random_node = random.randint(0, nr_nodes - 1)
         sampled_graph = nx.Graph()
 
-        sampled_graph.add_node(complete_graph.node[index_of_first_random_node]['id'])
+        sampled_graph.add_node(complete_graph.nodes[index_of_first_random_node]['id'])
 
         iteration = 1
         edges_before_t_iter = 0
@@ -89,13 +89,13 @@ class SRW_RWF_ISRW:
         complete_graph = nx.convert_node_labels_to_integers(complete_graph, 0, 'default', True)
         # giving unique id to every node same as built-in function id
         for n, data in complete_graph.nodes(data=True):
-            complete_graph.node[n]['id'] = n
+            complete_graph.nodes[n]['id'] = n
 
         nr_nodes = len(complete_graph.nodes())
         upper_bound_nr_nodes_to_sample = nodes_to_sample
         index_of_first_random_node = random.randint(0, nr_nodes - 1)
 
-        Sampled_nodes = set([complete_graph.node[index_of_first_random_node]['id']])
+        Sampled_nodes = set([complete_graph.nodes[index_of_first_random_node]['id']])
 
         iteration = 1
         nodes_before_t_iter = 0
@@ -104,7 +104,7 @@ class SRW_RWF_ISRW:
             edges = [n for n in complete_graph.neighbors(curr_node)]
             index_of_edge = random.randint(0, len(edges) - 1)
             chosen_node = edges[index_of_edge]
-            Sampled_nodes.add(complete_graph.node[chosen_node]['id'])
+            Sampled_nodes.add(complete_graph.nodes[chosen_node]['id'])
             curr_node = chosen_node
             iteration = iteration + 1
 
